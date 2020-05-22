@@ -1,3 +1,3 @@
 rootProject.name = "kubernetes"
 
-include("users")
+include("users-service-api")

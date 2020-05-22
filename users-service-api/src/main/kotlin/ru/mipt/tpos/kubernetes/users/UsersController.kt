@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 class UsersController(
     private val usersService: UsersService
 ) {
-    @PostMapping("users/add")
+    @PostMapping("/users/add")
     fun addUser(
         @RequestParam name: String,
         @RequestParam age: Int
