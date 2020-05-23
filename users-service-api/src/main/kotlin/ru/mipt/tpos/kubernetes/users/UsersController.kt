@@ -18,4 +18,8 @@ class UsersController(
     @GetMapping("/users/get")
     fun getUserById(@RequestParam id: Long): User? =
         usersService.getUserById(id)
+
+    @GetMapping("/users/get/all")
+    fun getAllUsers(): List<User> =
+        usersService.getAllUsers()
 }

@@ -24,4 +24,11 @@ class UsersService(
         log.info { "User with name $name and age $age successfully added: $savedUser" }
         return savedUser.id
     }
+
+    fun getAllUsers(): List<User> {
+        log.info { "Getting all users" }
+        val users = usersRepository.findAll()
+        log.info { "Found users:\n$users" }
+        return users
+    }
 }
