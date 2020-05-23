@@ -1,11 +1,17 @@
 package ru.mipt.tpos.kubernetes.users
 
+import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 
 @Service
-class UsersService {
-    fun getUserById(id: Long) =
-        User(12345, "fullName", 30)
+class UsersService(
+    private val usersRepository: UsersRepository
+) {
+    fun getUserById(id: Long): User? =
+        usersRepository.findByIdOrNull(id)
 
-    fun addUser(name: String, age: Int): Long = 12345
+    fun addUser(name: String, age: Int): Long {
+        val user = User(name, age)
+        return usersRepository.save(user).id
+    }
 }
