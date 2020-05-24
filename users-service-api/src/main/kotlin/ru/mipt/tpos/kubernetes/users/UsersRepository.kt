@@ -1,5 +1,5 @@
 package ru.mipt.tpos.kubernetes.users
 
-import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.repository.CrudRepository
 
-interface UsersRepository: JpaRepository<User, Long>
+interface UsersRepository: CrudRepository<User, Long>

@@ -29,6 +29,6 @@ class UsersService(
         log.info { "Getting all users" }
         val users = usersRepository.findAll()
         log.info { "Found users:\n$users" }
-        return users
+        return users.toList()
     }
 }
