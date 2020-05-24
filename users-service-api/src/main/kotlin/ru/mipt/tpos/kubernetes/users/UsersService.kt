@@ -1,6 +1,7 @@
 package ru.mipt.tpos.kubernetes.users
 
 import mu.KotlinLogging
+import org.springframework.dao.EmptyResultDataAccessException
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 
@@ -36,7 +37,7 @@ class UsersService(
         log.info { "Deleting user with id $id" }
         try {
             usersRepository.deleteById(id)
-        } catch (e: IllegalArgumentException) {
+        } catch (e: EmptyResultDataAccessException) {
             val msg = "Failed to delete user with id $id: such user doesn't exist"
             log.info { msg }
             throw NoSuchUserException(msg)

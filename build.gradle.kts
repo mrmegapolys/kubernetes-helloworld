@@ -19,7 +19,7 @@ subprojects {
     }
 
     group = "ru.mipt.tpos"
-    version = "0.0.7-SNAPSHOT"
+    version = "0.0.8-SNAPSHOT"
 
     java {
         sourceCompatibility = JavaVersion.VERSION_11
