@@ -31,4 +31,16 @@ class UsersService(
         log.info { "Found users:\n$users" }
         return users.toList()
     }
+
+    fun deleteUser(id: Long) {
+        log.info { "Deleting user with id $id" }
+        try {
+            usersRepository.deleteById(id)
+        } catch (e: IllegalArgumentException) {
+            val msg = "Failed to delete user with id $id: such user doesn't exist"
+            log.info { msg }
+            throw NoSuchUserException(msg)
+        }
+        log.info { "User with id $id deleted successfully" }
+    }
 }
