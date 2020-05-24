@@ -20,3 +20,7 @@ spec:
           envFrom:
             - configMapRef:
                 name: api-config
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
