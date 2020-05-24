@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: gcr.io/studious-loader-278016/users-service-api:0.0.6
+          image: gcr.io/studious-loader-278016/users-service-api:0.0.7
           ports:
             - containerPort: 8080
           envFrom:
